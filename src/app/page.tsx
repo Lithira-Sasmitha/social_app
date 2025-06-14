@@ -1,10 +1,16 @@
 import Image from "next/image";
+import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
 
 export default function Home() {
   return (
     <div>
-      <h1>Lithira sasmitha</h1>
+      <SignedOut>
+        <SignInButton mode="modal" />
+        <SignUpButton mode="modal" />
+      </SignedOut>
+      <SignedIn>
+        <UserButton />
+      </SignedIn>
     </div>
-    
   );
 }
